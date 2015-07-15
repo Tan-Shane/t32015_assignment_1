@@ -1,0 +1,160 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+* { box-sizing:border-box; }
+body { background:url(media/notebg.jpg) #cacaca; margin:30px; }
+
+.postit  { 
+	display: block;
+	padding:25px 25px 40px;
+/*	margin:0 auto 20px auto;*/
+	margin:0 0 30px 0;
+	width:auto;
+	height:auto; 
+	min-height:50px;
+	font:20px 'Poiret One', cursive; 
+	line-height:1.5;
+	border:0;
+	border-radius:3px;/*
+	background: -webkit-linear-gradient(#F9EFAF, #F7E98D);
+	background: -moz-linear-gradient(#F9EFAF, #F7E98D);
+	background: -o-linear-gradient(#F9EFAF, #F7E98D);
+	background: -ms-linear-gradient(#F9EFAF, #F7E98D);
+	background: linear-gradient(#F9EFAF, #F7E98D);*/
+	background:url(media/bg.jpg) #cacaca;
+	box-shadow:0 4px 6px rgba(0,0,0,0.1);
+	overflow:hidden;
+	transition:box-shadow 0.5s ease;
+	font-smoothing:subpixel-antialiased;
+	/*max-width:520px;*/
+	max-height:150px;
+	opacity: 0.8;
+
+}
+
+a:link{
+    	text-decoration: None;
+	color:#000;
+}
+textarea:hover { box-shadow:0 5px 8px rgba(0,0,0,0.15); }
+textarea:focus { box-shadow:0 5px 12px rgba(0,0,0,0.2); outline:none; }
+a:visited{
+	color:#000;
+}
+
+textarea  { 
+	display: block;
+	padding:25px 25px 40px;
+	margin:0 auto 20px auto;
+	width:250px;
+	height:250px;   
+	font:20px 'Poiret One', cursive; 
+	line-height:1.5;
+	border:0;
+	border-radius:3px;
+	background: -webkit-linear-gradient(#F9EFAF, #F7E98D);
+	background: -moz-linear-gradient(#F9EFAF, #F7E98D);
+	background: -o-linear-gradient(#F9EFAF, #F7E98D);
+	background: -ms-linear-gradient(#F9EFAF, #F7E98D);
+	background: linear-gradient(#F9EFAF, #F7E98D);
+	box-shadow:0 4px 6px rgba(0,0,0,0.1);
+	overflow:hidden;
+	transition:box-shadow 0.5s ease;
+	font-smoothing:subpixel-antialiased;
+	max-width:520px;
+	max-height:250px;
+}
+
+#hvr-grow-shadow {
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+#hvr-grow-shadow:hover, #hvr-grow-shadow:focus, #hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+}
+#hvr-grow-shadow-xtra {
+	border-radius:3px;
+	float:left;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+#hvr-grow-shadow-xtra:hover, #hvr-grow-shadow-xtra:focus, #hvr-grow-shadow-xtra:active {
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.10);
+}
+
+.time{
+    font-size:1.5em;
+    width:0px;
+    height:0px;
+    margin-top:25px;
+    margin-left:15px;
+    color:white;
+	opacity: 1;
+ 
+ /*   -ms-transform:rotate(90deg); /* IE 9 */
+  /*  -moz-transform:rotate(90deg); /* Firefox */
+  /*  -webkit-transform:rotate(90deg); /* Safari and Chrome */
+  /*  -o-transform:rotate(90deg); /* Opera */
+}
+.location{
+    font-size:1.5em;
+    width:0px;
+    height:0px;
+    margin-top:25px;
+    margin-left:15px;
+    color:white;
+	opacity: 1;
+}
+
+/*https://css-tricks.com/examples/ShapesOfCSS/*/
+
+#timeholder{
+	width: 120px;
+	height:200px;
+	float:left;
+	position:static;
+	margin: -25px -25px -25px -25px ;
+}
+
+#locationholder{
+	width: 185px;
+	height:200px;
+	background:#007bff;
+	float:right;
+	position:static;
+	margin: -25px -25px -50px -25px ;
+}
+
+/*#base {
+  
+  	position:static;
+	width: 0px;
+	height: 100px;
+	float:left;
+	margin-left:-25px;
+	margin-right:25px;
+	margin-top:-40px;
+	border-style: solid;
+	border-width: 70px 70px 70px 70px;
+	border-color: #007bff #007bff #007bff #007bff;
+}*/

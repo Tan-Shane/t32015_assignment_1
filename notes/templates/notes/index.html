@@ -1,0 +1,60 @@
+{%load staticfiles%}
+<title>Timetable for {{day}}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}" />
+
+
+
+
+    <div class="postit" style="color:{{note.fontcolor}};margin-top:0px;max-height:none;height:auto;display:block">
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'main' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Home</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'monday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Monday</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'tuesday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Tuesday</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'wednesday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Wednesday</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'thursday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Thursday</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'friday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Friday</h1></a></div>
+    </div>
+    
+    <div class="postit" style="color:{{note.fontcolor}};max-height:none;height:200px;margin-top:20px;display:block">
+        <h1 style="font-family:'Poiret One'; margin-top:-10px">Timetable for {{day}}</h1>
+        <h2 style="font-family:'Poiret One'">Classes today: {{total}}</h2>
+    </div>
+{% if notes %}
+    {% for note in notes %}
+        <a href={%url 'detail' note.id %}>
+            <div class="postit" id="hvr-grow-shadow" style="color:{{note.fontcolor}}">
+                <!--<div id="timeholder" style="background:{%for t in note.tag.all%} {{t.color}} {%endfor%}">
+                    <div class="rotatevertical">
+                    {%for t in note.tag.all%}
+                        <div><strong>{{t.title}}</strong></div>
+                    {%endfor%}
+                    </div>
+                </div>-->
+                <div id="timeholder" style="background:#000">
+                    <div class="time">
+                        <div><strong>{{note.due.time}}</strong></div>
+                    </div>
+                </div>
+                <div id="locationholder" style="background:{%for t in note.location.all%} {{t.color}} {%endfor%}">
+                    <div class="location">
+                    {%for t in note.location.all%}
+                        <div><strong>{{t.title}}</strong></div>
+                    {%endfor%}
+                    </div>
+                </div>
+                <div style="margin-left:120px; margin-top:-35px; opacity:1">
+                   <br>
+                       <u style="font-size:40px"><strong>{{note.title}}</strong></u>
+                       <div style="font-size: 30px">
+                       {%for t in note.teacher.all%}
+                        Teacher: {{t.title}}
+                        {%endfor%}
+                        </div>
+                   <br>
+            </div>
+        </div>
+
+        </a>
+    {% endfor %}
+{% else %}
+    <p style="font-family:'Poiret One'">No lessons have been scheduled for today! Check with your teachers about this…</p>
+{% endif %}

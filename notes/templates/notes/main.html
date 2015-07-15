@@ -1,0 +1,17 @@
+{%load staticfiles%}
+<title>Timetable for Class 3F</title>
+<link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}" />
+
+    <div class="postit" style="color:{{note.fontcolor}};margin-top:0px;max-height:none;height:auto;display:block">
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'main' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Home</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'monday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Monday</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'tuesday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Tuesday</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'wednesday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Wednesday</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'thursday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Thursday</h1></a></div>
+        <div id="hvr-grow-shadow-xtra" style="width:auto;height:50px;margin:auto"><a href={%url 'index' 'friday' %}><h1 style="font-family:'Poiret One'; margin-top:-15px; margin-left:10px; margin-right:10px">Friday</h1></a></div>
+    </div>
+    
+        <div class="postit" style="color:{{note.fontcolor}};max-height:none;height:100px;margin-top:20px;display:block;width:500px">
+        <h1 style="font-family:'Poiret One'; margin-top:-10px">Timetable for Class 3F</h1>
+    </div>
+
