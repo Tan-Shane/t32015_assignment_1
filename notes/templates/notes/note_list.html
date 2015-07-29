@@ -1,0 +1,49 @@
+{%extends 'notes/main.html'%}
+<!--{% load staticfiles %}-->
+{%block title%}
+    Note - {{object.title}}
+{%endblock%}
+{%block content%}
+<link rel="stylesheet" type="text/css" href="{% static 'notes/style.css' %}" />
+    <h2>Total number of notes: {{total}}</h2>
+    {% if object_list  %}
+        {% for note in object_list  %}
+            <a href={%url 'detail' note.id %}>
+            <div class="postit" id="hvr-grow-shadow" style="color:{{note.fontcolor}}">
+                <!--<div id="timeholder" style="background:{%for t in note.tag.all%} {{t.color}} {%endfor%}">
+                    <div class="rotatevertical">
+                    {%for t in note.tag.all%}
+                        <div><strong>{{t.title}}</strong></div>
+                    {%endfor%}
+                    </div>
+                </div>-->
+                <div id="timeholder" style="background:#000">
+                    <div class="time">
+                        <div><strong>{{note.due.time}}</strong></div>
+                    </div>
+                </div>
+                <div id="locationholder" style="background:{%for t in note.location.all%} {{t.color}} {%endfor%}">
+                    <div class="location">
+                    {%for t in note.location.all%}
+                        <div><strong>{{t.title}}</strong></div>
+                    {%endfor%}
+                    </div>
+                </div>
+                <div style="margin-left:120px; margin-top:-35px; opacity:1">
+                   <br>
+                       <u style="font-size:40px"><strong>{{note.title}}</strong></u>
+                       <div style="font-size: 30px">
+                       {%for t in note.teacher.all%}
+                        Teacher: {{t.title}}
+                        {%endfor%}
+                        </div>
+                   <br>
+            </div>
+        </div>
+
+        </a>
+        {% endfor %}
+    {% else %}
+        <p>No notes are available.</p>
+    {% endif %}
+{%endblock%}

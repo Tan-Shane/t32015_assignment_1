@@ -38,6 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'notes',
+    'bootstrap3',
+    'crispy_forms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,6 +56,7 @@ ROOT_URLCONF = 'assignment_1.urls'
 
 WSGI_APPLICATION = 'assignment_1.wsgi.application'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
