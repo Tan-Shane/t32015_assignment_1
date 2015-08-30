@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'notes',
     'bootstrap3',
     'crispy_forms',
+    'accounts',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,3 +87,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = '/accounts/login' #URL to forward to when the page needs user to login
+LOGIN_REDIRECT_URL = '/list/' #Page to forward user after user login
